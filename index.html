@@ -468,7 +468,96 @@
       海上従業員向けポータル<br>
       各手続きの内容については、MPT"kljtyokmesh@jp.kline.com"へお問い合わせください。
     </footer>
+<div style="margin-top:40px">
 
+<h2>🤖 AI手続き案内</h2>
+
+<input
+id="question"
+placeholder="例：乗船したい"
+style="width:70%;padding:10px">
+
+<button onclick="guide()">
+検索
+</button>
+
+<p id="answer"></p>
+
+</div>
+    
   </main>
+ <script>
+
+function guide(){
+
+const q=document.getElementById("question").value;
+
+let ans="";
+
+if(q.includes("乗船")){
+
+ans=`乗船はこちら<br>
+<a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=PkNEvaWp1Um8N7bfayZ7sNt3DPCo1G1BoeNmgk8ox9ZUNjJRRE9BOVAyNkZDR1JVRkxJOVU1NTM3QS4u&route=shorturl" target="_blank">
+乗船・下船フォーム
+</a>`;
+
+}
+
+else if(q.includes("下船")){
+
+ans=`下船はこちら<br>
+<a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=PkNEvaWp1Um8N7bfayZ7sNt3DPCo1G1BoeNmgk8ox9ZUNjJRRE9BOVAyNkZDR1JVRkxJOVU1NTM3QS4u&route=shorturl" target="_blank">
+乗船・下船フォーム
+</a>`;
+
+}
+
+else if(q.includes("出国")){
+
+ans=`出国はこちら<br>
+<a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=PkNEvaWp1Um8N7bfayZ7sNt3DPCo1G1BoeNmgk8ox9ZUNjJRRE9BOVAyNkZDR1JVRkxJOVU1NTM3QS4u&route=shorturl" target="_blank">
+出国・帰国フォーム
+</a>`;
+
+}
+
+else if(q.includes("帰国")){
+
+ans=`帰国はこちら<br>
+<a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=PkNEvaWp1Um8N7bfayZ7sNt3DPCo1G1BoeNmgk8ox9ZUNjJRRE9BOVAyNkZDR1JVRkxJOVU1NTM3QS4u&route=shorturl" target="_blank">
+出国・帰国フォーム
+</a>`;
+
+}
+
+else if(q.includes("旅費")){
+
+ans=`旅費精算はこちら<br>
+<a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=PkNEvaWp1Um8N7bfayZ7sICn9OoLXj1DnayB6jCipG5UNVgyV0hDQVpNSDM4TllRNVdLR1VQSUpXQS4u&route=shorturl" target="_blank">
+旅費精算
+</a>`;
+
+}
+
+else if(q.includes("雑費") || q.includes("経費")){
+
+ans=`雑費経費精算はこちら<br>
+<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=PkNEvaWp1Um8N7bfayZ7sICn9OoLXj1DnayB6jCipG5UMFMxTjVKTFhIQkgyN09BODNSNUhPUDJONC4u" target="_blank">
+雑費経費精算
+</a>`;
+
+}
+
+else{
+
+ans="すみません。まだ分かりません。";
+
+}
+
+document.getElementById("answer").innerHTML=ans;
+
+}
+
+</script> 
 </body>
 </html>
